@@ -1,2 +1,4 @@
-export default {
+export const initialSelectedSubreddit = 'reactjs';
+
+export const initialPosts {
 };

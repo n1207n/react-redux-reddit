@@ -1,31 +1,31 @@
 import axios from 'axios';
 
-import * from '../constants/postActionTypes';
+import * as types from '../constants/postActionTypes';
 
 export function selectSubreddit(subreddit) {
   return {
-    type: SELECT_SUBREDDIT,
+    type: types.SELECT_SUBREDDIT,
     subreddit
   };
 }
 
 export function invalidateSubreddit(subreddit) {
   return {
-    type: INVALIDATE_SUBREDDIT,
+    type: types.INVALIDATE_SUBREDDIT,
     subreddit
   };
 }
 
 export function requestPosts(subreddit) {
   return {
-    type: REQUEST_POSTS,
+    type: types.REQUEST_POSTS,
     subreddit
   };
 }
 
 export function receivePosts(subreddit, json) {
   return {
-    type: RECEIVE_POSTS,
+    type: types.RECEIVE_POSTS,
     subreddit,
     posts: json.data.map(child => child.data),
     receivedAt: Date.now()
